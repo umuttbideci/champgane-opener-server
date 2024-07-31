@@ -58,5 +58,10 @@ io.on('connection', (socket) => {
   });
 });
 
+// Use the PORT environment variable or default to port 3000
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Listen on 0.0.0.0 to accept connections from any IP address
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
